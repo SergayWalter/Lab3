@@ -1,0 +1,56 @@
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\Kyrs.csproj.AssemblyReference.cache
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\MainWindow.g.cs
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\App.g.cs
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\Kyrs_Content.g.cs
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\Kyrs_MarkupCompile.cache
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\Kyrs_MarkupCompile.lref
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\bin\Debug\Kyrs.exe.config
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\bin\Debug\Kyrs.exe
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\bin\Debug\Kyrs.pdb
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\bin\Debug\EntityFramework.dll
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\bin\Debug\EntityFramework.xml
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\MainWindow.baml
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\Kyrs.g.resources
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\Kyrs.Properties.Resources.resources
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\Kyrs.csproj.GenerateResource.cache
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\Kyrs.csproj.CoreCompileInputs.cache
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\Kyrs.csproj.Up2Date
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\Kyrs.exe
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\Kyrs.pdb
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\AddEditWindow.g.cs
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\AuthorizationWindow.g.cs
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\AddEditWindow.baml
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\AuthorizationWindow.baml
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\RefreshWindow.g.cs
+C:\Users\Sergay\Desktop\Kyrs\Kyrs\obj\Debug\RefreshWindow.baml
+G:\Крусач усач дремач\Kyrs\Kyrs\bin\Debug\Kyrs.exe.config
+G:\Крусач усач дремач\Kyrs\Kyrs\bin\Debug\Kyrs.exe
+G:\Крусач усач дремач\Kyrs\Kyrs\bin\Debug\Kyrs.pdb
+G:\Крусач усач дремач\Kyrs\Kyrs\bin\Debug\EntityFramework.dll
+G:\Крусач усач дремач\Kyrs\Kyrs\bin\Debug\EntityFramework.SqlServer.dll
+G:\Крусач усач дремач\Kyrs\Kyrs\bin\Debug\EntityFramework.xml
+G:\Крусач усач дремач\Kyrs\Kyrs\bin\Debug\EntityFramework.SqlServer.xml
+G:\Крусач усач дремач\Kyrs\Kyrs\bin\Debug\ru\EntityFramework.resources.dll
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\Kyrs.csproj.AssemblyReference.cache
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\AddEditWindow.g.cs
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\AuthorizationWindow.g.cs
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\MainWindow.g.cs
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\RefreshWindow.g.cs
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\App.g.cs
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\Kyrs_Content.g.cs
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\Kyrs_MarkupCompile.cache
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\Kyrs_MarkupCompile.lref
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\AddEditWindow.baml
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\AuthorizationWindow.baml
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\MainWindow.baml
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\RefreshWindow.baml
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\Kyrs.g.resources
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\Kyrs.Properties.Resources.resources
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\Kyrs.csproj.GenerateResource.cache
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\Kyrs.csproj.CoreCompileInputs.cache
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\Kyrs.csproj.Up2Date
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\Kyrs.exe
+G:\Крусач усач дремач\Kyrs\Kyrs\obj\Debug\Kyrs.pdb

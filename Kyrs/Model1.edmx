@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище KyrsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="AccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login_" Type="nvarchar" MaxLength="45" />
+          <Property Name="Password_" Type="nvarchar" MaxLength="45" />
+          <Property Name="RoleID" Type="int" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="ManufacturerID" />
+          </Key>
+          <Property Name="ManufacturerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MName" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Preparation">
+          <Key>
+            <PropertyRef Name="PreparationID" />
+          </Key>
+          <Property Name="PreparationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeID" Type="int" />
+          <Property Name="Description_" Type="nvarchar" MaxLength="550" />
+          <Property Name="ManufacturerID" Type="int" />
+          <Property Name="RecipeID" Type="int" />
+          <Property Name="Cost" Type="int" />
+        </EntityType>
+        <EntityType Name="Recipe">
+          <Key>
+            <PropertyRef Name="RecipeID" />
+          </Key>
+          <Property Name="RecipeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Role_">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Type_">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__Account__RoleID__267ABA7A">
+          <End Role="Role_" Type="Self.Role_" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role_">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Preparati__Manuf__300424B4">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="0..1" />
+          <End Role="Preparation" Type="Self.Preparation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="ManufacturerID" />
+            </Principal>
+            <Dependent Role="Preparation">
+              <PropertyRef Name="ManufacturerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Preparati__Recip__30F848ED">
+          <End Role="Recipe" Type="Self.Recipe" Multiplicity="0..1" />
+          <End Role="Preparation" Type="Self.Preparation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="Preparation">
+              <PropertyRef Name="RecipeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Preparati__TypeI__2F10007B">
+          <End Role="Type_" Type="Self.Type_" Multiplicity="0..1" />
+          <End Role="Preparation" Type="Self.Preparation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Preparation">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище KyrsModelContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Preparation" EntityType="Self.Preparation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role_" EntityType="Self.Role_" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type_" EntityType="Self.Type_" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Account__RoleID__267ABA7A" Association="Self.FK__Account__RoleID__267ABA7A">
+            <End Role="Role_" EntitySet="Role_" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Preparati__Manuf__300424B4" Association="Self.FK__Preparati__Manuf__300424B4">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="Preparation" EntitySet="Preparation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Preparati__Recip__30F848ED" Association="Self.FK__Preparati__Recip__30F848ED">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="Preparation" EntitySet="Preparation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Preparati__TypeI__2F10007B" Association="Self.FK__Preparati__TypeI__2F10007B">
+            <End Role="Type_" EntitySet="Type_" />
+            <End Role="Preparation" EntitySet="Preparation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KyrsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="AccountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login_" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="Password_" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="RoleID" Type="Int32" />
+          <NavigationProperty Name="Role_" Relationship="Self.FK__Account__RoleID__267ABA7A" FromRole="Account" ToRole="Role_" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="ManufacturerID" />
+          </Key>
+          <Property Name="ManufacturerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Preparation" Relationship="Self.FK__Preparati__Manuf__300424B4" FromRole="Manufacturer" ToRole="Preparation" />
+        </EntityType>
+        <EntityType Name="Preparation">
+          <Key>
+            <PropertyRef Name="PreparationID" />
+          </Key>
+          <Property Name="PreparationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeID" Type="Int32" />
+          <Property Name="Description_" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Name="ManufacturerID" Type="Int32" />
+          <Property Name="RecipeID" Type="Int32" />
+          <Property Name="Cost" Type="Int32" />
+          <NavigationProperty Name="Manufacturer" Relationship="Self.FK__Preparati__Manuf__300424B4" FromRole="Preparation" ToRole="Manufacturer" />
+          <NavigationProperty Name="Recipe" Relationship="Self.FK__Preparati__Recip__30F848ED" FromRole="Preparation" ToRole="Recipe" />
+          <NavigationProperty Name="Type_" Relationship="Self.FK__Preparati__TypeI__2F10007B" FromRole="Preparation" ToRole="Type_" />
+        </EntityType>
+        <EntityType Name="Recipe">
+          <Key>
+            <PropertyRef Name="RecipeID" />
+          </Key>
+          <Property Name="RecipeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Preparation" Relationship="Self.FK__Preparati__Recip__30F848ED" FromRole="Recipe" ToRole="Preparation" />
+        </EntityType>
+        <EntityType Name="Role_">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Account" Relationship="Self.FK__Account__RoleID__267ABA7A" FromRole="Role_" ToRole="Account" />
+        </EntityType>
+        <EntityType Name="Type_">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Preparation" Relationship="Self.FK__Preparati__TypeI__2F10007B" FromRole="Type_" ToRole="Preparation" />
+        </EntityType>
+        <Association Name="FK__Account__RoleID__267ABA7A">
+          <End Role="Role_" Type="Self.Role_" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role_">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Preparati__Manuf__300424B4">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="0..1" />
+          <End Role="Preparation" Type="Self.Preparation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="ManufacturerID" />
+            </Principal>
+            <Dependent Role="Preparation">
+              <PropertyRef Name="ManufacturerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Preparati__Recip__30F848ED">
+          <End Role="Recipe" Type="Self.Recipe" Multiplicity="0..1" />
+          <End Role="Preparation" Type="Self.Preparation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="Preparation">
+              <PropertyRef Name="RecipeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Preparati__TypeI__2F10007B">
+          <End Role="Type_" Type="Self.Type_" Multiplicity="0..1" />
+          <End Role="Preparation" Type="Self.Preparation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Preparation">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KyrsEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Account" EntityType="Self.Account" />
+          <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" />
+          <EntitySet Name="Preparation" EntityType="Self.Preparation" />
+          <EntitySet Name="Recipe" EntityType="Self.Recipe" />
+          <EntitySet Name="Role_" EntityType="Self.Role_" />
+          <EntitySet Name="Type_" EntityType="Self.Type_" />
+          <AssociationSet Name="FK__Account__RoleID__267ABA7A" Association="Self.FK__Account__RoleID__267ABA7A">
+            <End Role="Role_" EntitySet="Role_" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Preparati__Manuf__300424B4" Association="Self.FK__Preparati__Manuf__300424B4">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="Preparation" EntitySet="Preparation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Preparati__Recip__30F848ED" Association="Self.FK__Preparati__Recip__30F848ED">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="Preparation" EntitySet="Preparation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Preparati__TypeI__2F10007B" Association="Self.FK__Preparati__TypeI__2F10007B">
+            <End Role="Type_" EntitySet="Type_" />
+            <End Role="Preparation" EntitySet="Preparation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище KyrsModelContainer" CdmEntityContainer="KyrsEntities1">
+          <EntitySetMapping Name="Account">
+            <EntityTypeMapping TypeName="KyrsModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="Login_" ColumnName="Login_" />
+                <ScalarProperty Name="Password_" ColumnName="Password_" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Manufacturer">
+            <EntityTypeMapping TypeName="KyrsModel.Manufacturer">
+              <MappingFragment StoreEntitySet="Manufacturer">
+                <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+                <ScalarProperty Name="MName" ColumnName="MName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Preparation">
+            <EntityTypeMapping TypeName="KyrsModel.Preparation">
+              <MappingFragment StoreEntitySet="Preparation">
+                <ScalarProperty Name="PreparationID" ColumnName="PreparationID" />
+                <ScalarProperty Name="PName" ColumnName="PName" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="Description_" ColumnName="Description_" />
+                <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+                <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recipe">
+            <EntityTypeMapping TypeName="KyrsModel.Recipe">
+              <MappingFragment StoreEntitySet="Recipe">
+                <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
+                <ScalarProperty Name="RName" ColumnName="RName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role_">
+            <EntityTypeMapping TypeName="KyrsModel.Role_">
+              <MappingFragment StoreEntitySet="Role_">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Type_">
+            <EntityTypeMapping TypeName="KyrsModel.Type_">
+              <MappingFragment StoreEntitySet="Type_">
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="TName" ColumnName="TName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
